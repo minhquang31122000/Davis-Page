@@ -1,0 +1,118 @@
+@media screen and (min-width:576px) {
+    .my-sm-25{
+        margin-top:25px;
+        margin-bottom:25px;
+    }
+    .my-sm-80{
+        margin-top:80px;
+        margin-bottom:80px;
+    }
+}
+@media  screen and (min-width:768px) {
+    .my-md-25{
+        margin-top:25px;
+        margin-bottom:25px;
+    }
+    .my-md-80{
+        margin-top:80px;
+        margin-bottom:80px;
+    }
+}
+@media  screen and (min-width:992px) {
+    .st-navbar-list{
+        display: flex !important;
+    }
+    .my-lg-25{
+        margin-top:25px;
+        margin-bottom:25px;
+    }
+    .mt-lg-100{
+        margin-top:100px;
+    }
+}
+@media  screen and (min-width:1200px) {
+
+}
+@media screen and (min-width:1400px) {
+    .container{
+        max-width: 1120px;
+    }
+}
+@media  screen and (max-width:991px){
+    .my-25{
+        margin-top:25px;
+        margin-bottom:25px;
+    }
+    .mt-80{
+        margin-top:80px;
+    }
+    .mt-30{
+        margin-top:30px;
+    }
+    .main-header .container{
+        max-width: 100%;
+    }
+    .st-navbar-list{
+        display:none;
+    }
+    .phone{
+        display: none;
+    }
+    .menu-toggle{
+        display: block;
+    }
+    .st-navbar-list{
+        /* display:block; */
+        position:absolute;
+        top:100%;
+        left:0;
+        background-color: #070d1b;
+        width: 100vw;
+    }
+    .st-navbar-link{
+        text-transform:initial;
+        padding: 8px 20px;
+    }
+    .st-navbar-link.active{
+        color: #fff;
+    }
+    .menu-toggle-active span{
+        background-color: transparent;
+    }
+    .menu-toggle-active span::after{
+        transform:rotate(45deg);
+        margin-top: 0;
+        background-color:#fec544
+
+    }
+    .menu-toggle-active span::before{
+        transform:rotate(-45deg);
+        margin-top: 0;
+        background-color:#fec544
+
+    }
+    .menu-toggle  span::after{
+        transition-duration: 0.4s;
+        transition-delay:0.1s ;
+    }
+    .menu-toggle  span::before{
+        transition-duration: 0.4s;
+        transition-delay:0.1s ;
+    }
+    .menu-toggle span{
+        transition-delay:0.2s;
+        transition-duration:0.1s ;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .st-person-main h1{
+        font-size: 40px;
+    }
+    .st-person-main p{
+        font-size:16px;
+    }
+    .st-heading-subtitle{
+        display: none;
+    }
+}
