@@ -651,6 +651,65 @@ Gallery-img
     font-size: 30px;
     color:#fff;
 }
+.gallery-share{
+    position: relative;
+}
+.st-dropdown-share{
+    display:none;
+    position: absolute;
+    list-style: none;
+    background-color:#fff;
+    margin: 0;
+    padding: 0;
+    text-align:left;
+    top: 35px;
+    left: -70px;
+    border-radius: 3px;
+    z-index: 1;
+}
+.st-dropdown-share::before{
+    content: "";
+    position: absolute;
+    border-width: 10px 12px;
+    border-style:solid;
+    border-color: transparent transparent #fff transparent;
+    top: -18px;
+    right: 15px;
+
+}
+.st-dropdown-share li{
+    display:block;
+    border: none !important;
+    background-color: transparent !important;
+    padding: 0;
+}
+.st-dropdown-share li a{
+    white-space: nowrap;
+    display:inline-block;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 8px 15px;
+}
+.st-dropdown-share li:hover{
+    background-color: #DADADA;
+}
+.st-share-link i{
+   margin-right: 8px;
+    font-size: 14px;
+}
+.st-share-link span{
+    transform:translateY(-1px);
+    color: #000;
+}
+.st-share-facebook{
+    margin-top: 10px;
+}
+.st-share-facebook a i{
+    color: #3b5998;
+}
+.st-share-instagram a i{
+    color: #f77a40;
+}
 .show{
     display:block;
 }

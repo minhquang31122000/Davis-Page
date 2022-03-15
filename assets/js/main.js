@@ -3,7 +3,8 @@ loadingBg()
 collapsible()
 ripplesBg()
 lightGallery()
-galleryImg()
+galleryImg()    
+dropdownShare()
 new WOW().init();
 function collapsible(){
     $('.menu-toggle').on('click',function(){
@@ -70,4 +71,10 @@ function galleryImg(){
     }
 }
 
+function dropdownShare(){
+    $('.gallery-share').click(function(){
+        $('.st-dropdown-share').css('display', 'block')
+    })
     
+}  
+
