@@ -29,6 +29,9 @@
     .mt-lg-100{
         margin-top:100px;
     }
+    .mt-lg-25{
+        margin-top:25px;
+    }
 }
 @media  screen and (min-width:1200px) {
 
@@ -48,6 +51,9 @@
     }
     .mt-30{
         margin-top:30px;
+    }
+    .mt-25{
+        margin-top:25px;
     }
     .main-header .container{
         max-width: 100%;

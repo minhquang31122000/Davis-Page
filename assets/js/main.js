@@ -7,6 +7,9 @@ galleryImg()
 dropdownShare()
 openfullscreen()
 zoomGallery()
+slickInit()
+showSocialIcon()
+checkForm()
 new WOW().init();
 function collapsible(){
     $('.menu-toggle').on('click',function(){
@@ -134,4 +137,115 @@ function zoomGallery(){
             "transform":`scale3d(${currentSizeImg},${currentSizeImg},1)`
         })
     })
+}
+
+function slickInit(){
+    $('.st-slider').each(function(){
+        var $ts=$(this).find('.slick-container');
+        var $slickActive=$(this).find('.slick-wrapper');
+        var slidesPerView=$ts.attr('data-slides-per-view');  
+        var slidesScroll=parseInt($ts.attr('data-slides-scroll'),10);   
+        if(slidesPerView=='responsive'){
+            var slidesPerView=parseInt($ts.attr('data-add-slides'),10)
+            var lgSildes=parseInt($ts.attr('data-lg-slides'),10)
+            var mdSildes=parseInt($ts.attr('data-md-slides'),10)
+            var smSildes=parseInt($ts.attr('data-sm-slides'),10)
+            var xsSildes=parseInt($ts.attr('data-xs-slides'),10)
+        }
+
+        $slickActive.slick({
+            arrows:false,
+            infinite: true,
+            autoplay:true,
+            autoplaySpeed:3000,
+            dots:true,
+            slidesToShow: slidesPerView,
+            slidesToScroll:slidesScroll,
+            responsive:[{
+                breakpoint:1600,
+                settings:{
+                    slidesToShow:lgSildes
+                    }
+                
+                },
+                {
+                    breakpoint:1200,
+                    settings:{
+                        slidesToShow:mdSildes
+                    }
+                },
+                {
+                    breakpoint:992,
+                    settings:{
+                        slidesToShow:smSildes
+                    }
+                },
+                {
+                    breakpoint:768,
+                    settings:{
+                        slidesToShow:xsSildes
+                    }
+                }
+            ]
+        })
+    })
+}
+function showSocialIcon(){
+    $('.st-social-link').hover(function(){
+            $(this).addClass('active').siblings().removeClass('active')
+            // $(this).css('border-color','#fec544').siblings().css('border-color','#3f4551')
+        })
+}
+function checkForm(){
+    var form=document.querySelector('form')
+    var contactAlert=document.querySelector('.st-contact-alert')
+    var userName=document.querySelector('#name')
+    var userEmail=document.querySelector('#email')
+    var userSub=document.querySelector('#subject')
+    var userMsg=document.querySelector('#msg')
+   
+    // <strong>Warning!</strong> Please Enter Valid Email.
+    form.addEventListener('submit',function(e) {
+        e.preventDefault()
+        let arrInput=[userName,userEmail,userSub,userMsg]
+        if(checkEmpty(arrInput)){
+            checkEmail(userEmail)
+        }
+    })
+
+    function showSuccess(){
+        contactAlert.classList.remove('show','error')
+        contactAlert.classList.add('show','success')
+        contactAlert.innerHTML='<strong>Success!</strong> Email has been sent successfully.'
+    }
+    function showError(messageError){
+        contactAlert.classList.remove('show','success')
+        contactAlert.classList.add('show','error')
+        console.log(messageError)
+        contactAlert.innerHTML=messageError
+    }
+    function checkEmpty(listInput){
+        let isCheckEmpty = true
+            listInput.forEach(input=>{
+                input.value=input.value.trim()
+                if(!input.value){
+                    showError('<strong>Warning!</strong> All fields are required.')
+                    isCheckEmpty=false
+                }
+                else{
+                    showSuccess()
+                }
+            })
+            return isCheckEmpty
+    }
+    function checkEmail(input){
+        const regexEmail = 
+        /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        if(regexEmail.test(input.value.trim().toLowerCase())){
+            showSuccess()
+        }
+        else{
+            showError('<strong>Warning!</strong> Please Enter Valid Email.')
+        }
+    }
 }
