@@ -31,9 +31,7 @@ html {
     background-color:#070d1b;
 }
 
-.container{
-    padding-top: 50px;
-}
+
 .main-header .container{
     padding-top:0;
 }
@@ -141,7 +139,12 @@ header{
     display:block;
     margin-top: 8px;
 }
-
+.navbar-brand img{
+    width: 70%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
 /*----------------------------------------------------------------
 Person
 ------------------------------------------------------------------
@@ -290,6 +293,7 @@ About
 }
 .st-text-block-infor li{
     margin-bottom:15px;
+    color: #a9adb8;
 }
 .st-text-block-infor li span:first-child{
     display: inline-block;
@@ -358,7 +362,10 @@ Services
 My-skills
 ------------------------------------------------------------------
 */
-
+#my-skills{
+    margin-top: 0;
+    padding-top:100px ;
+}
 .st-skill-title{
     color:#fff;
     font-size: 34px;
@@ -393,7 +400,7 @@ Resume
 */
 #resume{
     margin-top:0;
-    padding-top: 50px;
+    padding-top: 100px;
 }
 .st-resume-heading{
     display:flex;
@@ -740,11 +747,17 @@ Reviews
 ------------------------------------------------------------------
 */
 #reviews{
+    margin-top: 0;
+    padding-top: 100px;
     padding-bottom: 20px;
 }
 .st-slider{
     position: relative;
     padding-bottom:50px ;
+}
+.st-slider .slick-container .slick-wrapper {
+    margin-right: -15px;
+    margin-left: -15px;
 }
 .slick-slide{
     padding-left: 15px;
@@ -853,9 +866,6 @@ Reviews
 Blog
 ------------------------------------------------------------------
 */
-.slick-blog-item{
-   
-}
 .blog-item-link{
     display:block;
     text-decoration:none;
@@ -973,17 +983,27 @@ textarea:focus{
     align-items:center;
     margin-bottom:20px;
 }
+.st-contact-item:hover .st-contact-item-icon i{
+    border-color: #fec544;
+}
 .st-contact-item-icon i{
     line-height:20px;
     font-size: 20px;
     padding:10px;
     border:1px solid #232935;
     border-radius: 50%;
+    text-align: center;
+}
+.fa-location-dot{
+    width:42px;
 }
 .st-contact-item-detail{
     display:flex;
     flex-direction:column;
     margin-left: 30px;
+}
+.st-contact-item-detail a:hover{
+    color: #fec544;
 }
 .st-contact-item-title{
     font-size: 20px;
@@ -1009,7 +1029,6 @@ textarea:focus{
     justify-content:center;
     align-items:center;
     color:#fff;
-    font-size: 20px;
     border:1px solid #3f4551;
     border-radius: 50px;
     margin-right: 20px;
@@ -1072,24 +1091,20 @@ strong{
     display:flex;
     align-items:center;
     justify-content:center;
+    text-align: center;
 }
 /*----------------------------------------------------------------
 Sub class
 ------------------------------------------------------------------
 */
 
+
+.pr-15{
+    padding-right: 15px;
+}
 .show{
     display:block;
 }
 .hide{
     display:none;
-}
-.pt-0{
-    padding-top:0;
-}
-.pl-50{
-    padding-left: 50px;
-}
-.pr-15{
-    padding-right: 15px;
 }

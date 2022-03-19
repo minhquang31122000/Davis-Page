@@ -144,6 +144,7 @@ function slickInit(){
         var $ts=$(this).find('.slick-container');
         var $slickActive=$(this).find('.slick-wrapper');
         var slidesPerView=$ts.attr('data-slides-per-view');  
+        var lgSlidesScroll=parseInt($ts.attr('data-lg-slides-scroll'),10);
         var slidesScroll=parseInt($ts.attr('data-slides-scroll'),10);   
         if(slidesPerView=='responsive'){
             var slidesPerView=parseInt($ts.attr('data-add-slides'),10)
@@ -160,7 +161,7 @@ function slickInit(){
             autoplaySpeed:3000,
             dots:true,
             slidesToShow: slidesPerView,
-            slidesToScroll:slidesScroll,
+            slidesToScroll:lgSlidesScroll,
             responsive:[{
                 breakpoint:1600,
                 settings:{
@@ -177,13 +178,16 @@ function slickInit(){
                 {
                     breakpoint:992,
                     settings:{
-                        slidesToShow:smSildes
+                        slidesToShow:smSildes,
+                        slidesToScroll:slidesScroll
                     }
                 },
                 {
                     breakpoint:768,
                     settings:{
-                        slidesToShow:xsSildes
+                        slidesToShow:xsSildes,
+                        slidesToScroll:slidesScroll
+
                     }
                 }
             ]
