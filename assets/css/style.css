@@ -1002,7 +1002,7 @@ textarea:focus{
     flex-direction:column;
     margin-left: 30px;
 }
-.st-contact-item-detail a:hover{
+.st-contact-item-detail a,span:hover{
     color: #fec544;
 }
 .st-contact-item-title{

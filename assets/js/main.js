@@ -106,7 +106,7 @@ function zoomGallery(){
     let galleryZoomIn=document.querySelector('.gallery-zoomIn')
     let currentSizeImg=1
     checkSizeImg()
-    console.log(currentSizeImg)
+    // console.log(currentSizeImg)
     function checkSizeImg(){
         if (currentSizeImg<=1){
             $(galleryZoomIn).css({
@@ -123,7 +123,7 @@ function zoomGallery(){
     }    
     $('.gallery-zoomOut').click(function(){
         currentSizeImg++
-        console.log("test1:"+currentSizeImg)
+        // console.log("test1:"+currentSizeImg)
         checkSizeImg()
         $(galleryImg).css({
             "transform":`scale3d(${currentSizeImg},${currentSizeImg},1)`
@@ -131,7 +131,7 @@ function zoomGallery(){
     })
     $('.gallery-zoomIn').click(function(){
         currentSizeImg--
-        console.log("test2:"+currentSizeImg)
+        // console.log("test2:"+currentSizeImg)
         checkSizeImg()
         $(galleryImg).css({
             "transform":`scale3d(${currentSizeImg},${currentSizeImg},1)`
@@ -225,7 +225,7 @@ function checkForm(){
     function showError(messageError){
         contactAlert.classList.remove('show','success')
         contactAlert.classList.add('show','error')
-        console.log(messageError)
+        // console.log(messageError)
         contactAlert.innerHTML=messageError
     }
     function checkEmpty(listInput){
@@ -268,8 +268,8 @@ function findHighestNode(nodesList) {
 
 findHighestNode(document.documentElement.childNodes);
 document.addEventListener('scroll', function(e){
-    console.log([e])
+    // console.log([e])
      
 })
 // The entire page height is found
-console.log('Page height is', viewpoint);
+// console.log('Page height is', viewpoint);
